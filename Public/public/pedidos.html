@@ -10,8 +10,20 @@
         nav a:hover, nav a.active { background: #0077e6; }
         main { background: white; padding: 30px; margin-top: 20px; border-radius: 8px; min-height: 300px; }
         h1.titulo-pagina { color: #003366; font-size: 32px; border-bottom: 3px solid #0055a5; padding-bottom: 10px; }
-        .btn-volver { display: inline-block; margin-top: 25px; background-color: #28a745; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .btn-volver:hover { background-color: #218838; }
+        
+        .contenedor-boton { margin-top: 30px; padding-top: 20px; border-top: 2px solid #e0e0e0; }
+        .btn-inicio-azul { 
+            display: inline-block !important; 
+            background-color: #0055a5 !important; 
+            color: #ffffff !important; 
+            padding: 14px 28px; 
+            text-decoration: none !important; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            font-size: 16px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
+        }
+        .btn-inicio-azul:hover { background-color: #003366 !important; }
     </style>
 </head>
 <body>
@@ -27,9 +39,10 @@
     <main>
         <h1 class="titulo-pagina">5. Pedidos y Facturación DIAN</h1>
         <p>Gestión de órdenes de compra y emisión de factura electrónica.</p>
-        
-        <!-- Botón para regresar -->
-        <a href="index.html" class="btn-volver">🏠 Volver a la Página Principal</a>
+
+        <div class="contenedor-boton">
+            <a href="index.html" class="btn-inicio-azul">🏠 Volver a la Página Principal</a>
+        </div>
     </main>
 </body>
 </html>
