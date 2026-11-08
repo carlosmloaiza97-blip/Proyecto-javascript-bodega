@@ -2,107 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodega Mayorista Virtual - Call Center</title>
+    <title>1. Inicio / Dashboard</title>
     <style>
-        \* { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; } 
-        body { margin: 0; padding: 20px; background-color: #f4f6f9; } 
-        header { background-color: #003366; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; } 
-        header h1 { margin: 0 0 15px 0; font-size: 22px; }
-
-        /* Navegación por botones */
-        nav ul { list-style: none; display: flex; gap: 10px; padding: 0; margin: 0; flex-wrap: wrap; }
-        nav button {
-            background-color: #0055a5; 
-            color: white; 
-            border: none; 
-            padding: 12px 18px; 
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer; 
-            transition: background 0.3s;
-        }
-
-        /* Pestaña activa (visible) */
-        .tab-content.active {
-            display: block;
-        }
-        /* Título grande de cada pestaña */
-        .tab-title {
-             color: #003366;
-             font-size: 32px;
-             margin-top: 0;
-             border-bottom: 3px solid #0055a5;
-             padding-bottom: 10px;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f6f9; }
+        header { background-color: #003366; color: white; padding: 15px; border-radius: 8px; }
+        nav a { color: white; text-decoration: none; background: #0055a5; padding: 10px 15px; border-radius: 5px; margin-right: 5px; font-weight: bold; }
+        nav a:hover, nav a.active { background: #0077e6; }
+        main { background: white; padding: 30px; margin-top: 20px; border-radius: 8px; min-height: 300px; }
+        h1.titulo-pagina { color: #003366; font-size: 32px; border-bottom: 3px solid #0055a5; padding-bottom: 10px; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bodega Mayorista Virtual - Calzado y Ropa</h1>
         <nav>
-            <ul>
-                <li><button class="nav-btn active" onclick="openTab(event, 'inicio')">1. Inicio / Dashboard</button></li> 
-                <li><button class="nav-btn" onclick="openTab(event, 'catalogo')">2. Catálogo Mayorista</button></li> 
-                <li><button class="nav-btn" onclick="openTab(event, 'inventario')">3. Inventario SQL</button></li> 
-                <li><button class="nav-btn" onclick="openTab(event, 'kpis')">4. Call Center / KPIs</button></li> 
-                <li><button class="nav-btn" onclick="openTab(event, 'pedidos')">5. Pedidos y Facturación DIAN</button></li>
-            </ul>
+            <a href="index.html" class="active">1. Inicio / Dashboard</a>
+            <a href="catalogo.html">2. Catálogo Mayorista</a>
+            <a href="inventario.html">3. Inventario SQL</a>
+            <a href="kpis.html">4. Call Center / KPIs</a>
+            <a href="pedidos.html">5. Pedidos y Facturación DIAN</a>
         </nav>
     </header>
-
-<main>
-    <!-- Pestaña 1 -->
-     <div id="inicio" class="tab-content active"&gt;
-     <h1 class="tab-title"&gt;1\. Inicio / Dashboard</h1>
-        <p><strong>Estado del sistema:</strong> Activo y respondiendo a peticiones en tiempo real en el puerto 3000.</p>
-        <p>Bienvenido al panel principal de control del sistema de la Bodega Mayorista Virtual.</p>
-    </div>
-
-    <!-- Pestaña 3 -->
-     <div id="inventario" class="tab-content">
-        <h1 class="tab-title"&gt;2\. Catálogo Mayorista</h1>
-        <p>Consulta de prendas de vestir y calzado disponibles para venta al por mayor.</p>
-    </div>
-
-    <!-- Pestaña 3 -->
-     <div id="inventario" class="tab-content">
-        <h1 class="tab-title"&gt;3\. Inventario SQL</h1>
-        <p>Consulta de existencias sincronizada en tiempo real con Microsoft SQL Server.</p>
-    </div>
-
-    <!-- Pestaña 4 -->
-     <div id="kpis" class="tab-content">
-        <h1>4\. Call Center / KPIs</h1>
-        <ul>
-            <li><strong>Nivel de Servicio:</strong> 85%</li>
-            <li><strong>Tiempo Medio de Atención (TMA):</strong> 3.5 minutos</li>
-            <li><strong>Tasa de Abandono:</strong> &lt; 3%</li>
-        </ul>
-    </div>
-
-    <!-- Pestaña 5 -->
-         <div id="pedidos" class="tab-content"&gt;>
-            <h1 class="tab-title"&gt;5\. Pedidos y Facturación DIAN</h1>
-            <p>Gestión de órdenes de compra y módulo de emisión de factura electrónica.</p>
-        </div>
+    <main>
+        <h1 class="titulo-pagina">1. Inicio / Dashboard</h1>
+        <p><strong>Estado del sistema:</strong> Servidor Node.js activo y respondiendo en el puerto 3000.</p>
+        <p>Bienvenido al panel principal de control de la Bodega Mayorista Virtual.</p>
     </main>
-
-    <script>
-        function openTab(evt, tabName) {
-            // Ocultar el contenido de todas las pestañas
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content =&gt; content.classList.remove('active'));
-
-            // Desactivar el estado activo de todos los botones
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn =&gt; btn.classList.remove('active'));
-
-            // Mostrar la pestaña seleccionada y activar su botón correspondiente
-            document.getElementById(tabName).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }   
-    </script>
 </body>
 </html>
